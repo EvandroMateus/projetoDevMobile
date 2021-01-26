@@ -1,17 +1,26 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      <ion-icon name="document-text-outline"></ion-icon>
+      Últimos artigos
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        <h1>Artigo 1</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi animi voluptates nesciunt ea eius laboriosam, reiciendis praesentium veritatis ipsa? Ullam, incidunt eos. Facilis, iure ipsam molestiae at sit blanditiis dolores!</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
 </ion-content>

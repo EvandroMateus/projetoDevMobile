@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>
+        <ion-icon name="document-text-outline"></ion-icon>
+        Informação
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  
+    <ion-list>
+      <ion-item>
+        <ion-label>
+              <h2>{{artigo.nome}}</h2>
+              <h3>autor: {{artigo.autor}}</h3>
+              <h3>publicado em {{artigo.publicado}}</h3>
+              <h3>Tema:{{artigo.tema}}</h3>
+              <h3>{{artigo.desc}}</h3>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>

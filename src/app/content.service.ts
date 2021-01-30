@@ -16,13 +16,26 @@ export class ContentService{
         this.storage.set(conteudo.id, JSON.stringify(conteudo))
     }
 
-    async listaConteudos(){
-        let conteudos = []
+    async listaArtigos(){
+        let artigos = []
         await this.storage.forEach((value, key) => {
             const conteudo = JSON.parse(value)
-            conteudos.push(conteudo)
+            if(conteudo.tipo == 'artigo'){
+            artigos.push(conteudo)
+            }
         })
-        return conteudos
+        return artigos
+    }
+
+    async listaNoticias(){
+        let noticias = []
+        await this.storage.forEach((value, key) => {
+            const conteudo = JSON.parse(value)
+            if(conteudo.tipo == 'noticia'){
+            noticias.push(conteudo)
+            }
+        })
+        return noticias
     }
 
 }

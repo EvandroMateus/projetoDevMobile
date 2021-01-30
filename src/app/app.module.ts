@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms'
 import { RouteReuseStrategy } from '@angular/router';
+
+import { IonicStorageModule } from '@ionic/storage';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -10,11 +13,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArtigosListComponent } from './conteudo/artigos-list.component';
 import { ArtigosInfoComponent } from './conteudo/artigos-info.component';
+import { ContentAddComponent } from './content-add/content-add.component';
 
 @NgModule({
-  declarations: [AppComponent, ArtigosListComponent, ArtigosInfoComponent],
+  declarations: [AppComponent,
+    ContentAddComponent, 
+    ArtigosListComponent, 
+    ArtigosInfoComponent  
+  ],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, IonicStorageModule.forRoot()],
   providers: [
     StatusBar,
     SplashScreen,

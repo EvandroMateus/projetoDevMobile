@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { ContentService } from '../content.service'
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  public conteudos
+
+  constructor(private contentService: ContentService) {}
+
+  async ionViewWillEnter(){
+    this.conteudos = await this.contentService.listaConteudos()
+  }
 
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ContentService } from '../content.service'
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  public noticias
+
+  constructor(private contentService: ContentService) {}
+
+  async ionViewWillEnter(){
+    this.noticias = await this.contentService.listaNoticias()
+  }
 
 }

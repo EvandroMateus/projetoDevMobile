@@ -38,4 +38,8 @@ export class ContentService{
         return noticias
     }
 
+    async removerConteudo(id){
+        await this.storage.remove(id)
+    }
+
 }

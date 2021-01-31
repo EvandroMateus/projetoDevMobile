@@ -20,6 +20,8 @@
         <h1>{{artigo.titulo}}</h1>
         <h3>{{artigo.tema}}</h3>
         <p>{{artigo.texto}}</p>
+        <ion-button size="small" color="success">Editar</ion-button>
+        <ion-button size="small" color="danger" (click)="removerArtigo(artigo.id)">Excluir</ion-button>
       </ion-label>
     </ion-item>
   </ion-list>

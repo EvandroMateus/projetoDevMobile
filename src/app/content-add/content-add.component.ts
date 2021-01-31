@@ -14,7 +14,10 @@ export class ContentAddComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private contentService: ContentService, private router: Router) { }
 
   ngOnInit() {
-    
+    const id = this.activatedRoute.snapshot.paramMap.get("id")
+    if(id !== null){
+      this.contentService.pegarConteudoPorId().then
+    }
   }
 
   addConteudo(){

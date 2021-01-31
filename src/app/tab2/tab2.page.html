@@ -15,11 +15,11 @@
   </ion-fab>
 
   <ion-list>
-    <ion-item *ngFor="let noticia of noticias">
+    <ion-item *ngFor="let noticia of noticias" [routerLink]="['/tabs/tab2/conteudo-info', noticia.id]">
       <ion-label>
         <h1>{{noticia.titulo}}</h1>
         <h3>{{noticia.tema}}</h3>
-        <p>{{noticia.texto}}</p>
+        <p>{{noticia.autor}}</p>
       </ion-label>
     </ion-item>
   </ion-list>

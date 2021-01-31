@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ContentService } from '../content.service'
 
 @Component({
@@ -8,7 +8,7 @@ import { ContentService } from '../content.service'
 })
 export class Tab1Page {
 
-  public artigos
+  public artigos;
 
   constructor(private contentService: ContentService) {}
 

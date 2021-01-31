@@ -11,15 +11,13 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ArtigosListComponent } from './conteudo/artigos-list.component';
-import { ArtigosInfoComponent } from './conteudo/artigos-info.component';
 import { ContentAddComponent } from './content-add/content-add.component';
+import { ConteudoInfoComponent } from './conteudo/conteudo-info.component';
 
 @NgModule({
   declarations: [AppComponent,
-    ContentAddComponent, 
-    ArtigosListComponent, 
-    ArtigosInfoComponent  
+    ContentAddComponent,
+    ConteudoInfoComponent  
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, IonicStorageModule.forRoot()],

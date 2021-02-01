@@ -4,8 +4,6 @@
       <ion-icon name="newspaper-outline"></ion-icon>
       Últimas notícias
     </ion-title>
-    <ion-icon slot="end" name="moon"></ion-icon>
-    <ion-toggle id="themeToggle" slot="end"></ion-toggle>
   </ion-toolbar>
 </ion-header>
 
@@ -20,8 +18,10 @@
     <ion-item *ngFor="let noticia of noticias" [routerLink]="['conteudo-info', noticia.id]">
       <ion-label>
         <h1>{{noticia.titulo}}</h1>
-        <h3>{{noticia.tema}}</h3><br>
-        <p>publicado por {{noticia.autor}}</p>
+        <h3>{{noticia.tema}}</h3>
+        <p>{{noticia.texto}}</p>
+        <ion-button size="small" color="success" [routerLink]="['adicionar-editar', noticia.id]">Editar</ion-button>
+        <ion-button size="small" color="danger" (click)="removerConteudo(noticia.id)">Excluir</ion-button>
       </ion-label>
     </ion-item>
   </ion-list>

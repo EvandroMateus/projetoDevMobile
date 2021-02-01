@@ -38,12 +38,14 @@
       <ion-select [(ngModel)]="conteudo.tema" name="tema" cancelText="Cancelar" okText="Selecionar">
         <ion-select-option value="JavaScript">JavaScript</ion-select-option>
         <ion-select-option value="PHP">PHP</ion-select-option>
-        <ion-select-option value="Inteligencia Artificial">Inteligencia Artificial</ion-select-option>
+        <ion-select-option value="NodeJS">NodeJS</ion-select-option>
+        <ion-select-option value="CSS">CSS</ion-select-option>
+        <ion-select-option value="HTML">HTML</ion-select-option>
       </ion-select>
     </ion-item>
     
     <ion-item>
-      <ion-label position="floating">Conteúdo</ion-label>
+      <ion-label position="floating">Descrição</ion-label>
       <ion-textarea [(ngModel)]="conteudo.texto" name="texto" placeholder="Insira o texto aqui"></ion-textarea>
     </ion-item>
 

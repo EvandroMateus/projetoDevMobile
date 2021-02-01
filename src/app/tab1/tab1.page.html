@@ -17,14 +17,14 @@
   </ion-fab>
 
   <ion-list>
-    <ion-item *ngFor="let artigo of artigos" [routerLink]="['conteudo-info', artigo.id]">
-      <ion-label>
+    <ion-item *ngFor="let artigo of artigos">
+      <ion-label [routerLink]="['conteudo-info', artigo.id]">
         <h1>{{artigo.titulo}}</h1>
         <h3>{{artigo.tema}}</h3>
         <p>{{artigo.texto}}</p>
-        <ion-button size="small" color="success" [routerLink]="['adicionar-editar', artigo.id]">Editar</ion-button>
-        <ion-button size="small" color="danger" (click)="removerConteudo(artigo.id)">Excluir</ion-button>
       </ion-label>
+      <ion-button size="small" color="success" [routerLink]="['adicionar-editar', artigo.id]">Editar</ion-button>
+      <ion-button size="small" color="danger" (click)="removerConteudo(artigo.id)">Excluir</ion-button>
     </ion-item>
   </ion-list>  
 </ion-content>

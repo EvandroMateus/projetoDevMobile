@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { ContentService } from '../content.service';
 
 @Component({
@@ -16,14 +16,18 @@ export class ConteudoInfoComponent implements OnInit{
     titulo: null,
     autor: null,
     tema: null,
-    texto: null
+    texto: null,
+    tipo: null
   };
   
-  constructor(private activatedRoute: ActivatedRoute, private contentService:ContentService){}
+  constructor(private activatedRoute: ActivatedRoute, private contentService:ContentService, private router: Router){}
 
   ngOnInit(){
       const id = this.activatedRoute.snapshot.paramMap.get('id');
       this.contentService.pegarConteudoPorId(id).then(conteudo => {
+        if(conteudo == null){
+          this.router.navigate(['/'])
+        }
         this.conteudo = conteudo;
       });
     

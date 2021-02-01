@@ -9,10 +9,13 @@ import { v4 as uuidv4 } from 'uuid'
 export class ContentService{
     constructor(private storage: Storage){}
 
-    private conteudos = []
-
+    private conteudos = [];
+    
+    
     salvarConteudo(conteudo){
-        conteudo.id = uuidv4()
+        if(conteudo.id == null){
+            conteudo.id = uuidv4()
+        }
         this.storage.set(conteudo.id, JSON.stringify(conteudo))
     }
 
@@ -40,6 +43,12 @@ export class ContentService{
 
     async removerConteudo(id){
         await this.storage.remove(id)
+    }
+
+    //SELECT ONE (Read)
+    async pegarConteudoPorId(idConteudo) {
+        const conteudoString = await this.storage.get(idConteudo);
+        return JSON.parse(conteudoString);
     }
 
 }

@@ -16,7 +16,9 @@ export class ContentAddComponent implements OnInit {
   ngOnInit() {
     const id = this.activatedRoute.snapshot.paramMap.get("id")
     if(id !== null){
-      this.contentService.pegarConteudoPorId().then
+      this.contentService.pegarConteudoPorId(id).then(conteudo => {
+        this.conteudo = conteudo
+      })
     }
   }
 

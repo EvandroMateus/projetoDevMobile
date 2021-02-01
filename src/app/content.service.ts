@@ -13,7 +13,9 @@ export class ContentService{
     
     
     salvarConteudo(conteudo){
-        conteudo.id = uuidv4()
+        if(conteudo.id == null){
+            conteudo.id = uuidv4()
+        }
         this.storage.set(conteudo.id, JSON.stringify(conteudo))
     }
 
@@ -39,15 +41,8 @@ export class ContentService{
         return noticias
     }
 
-    //SELECT ALL (Read)
-    async pegarTodosConteudos(){
-        let conteudos = []; //vetor conteudos criado
-        await this.storage.forEach((conteudoString) => { //acesso ao Storage, para cada item
-           const conteudo = JSON.parse(conteudoString); //transformado em String
-            conteudos.push(conteudo); //adcionado em objeto JS no vetor
-        });
-
-        return conteudos;
+    async removerConteudo(id){
+        await this.storage.remove(id)
     }
 
     //SELECT ONE (Read)
@@ -55,21 +50,5 @@ export class ContentService{
         const conteudoString = await this.storage.get(idConteudo);
         return JSON.parse(conteudoString);
     }
-    
-    /*
-    pegarConteudoPorId(idConteudo){
-        let conteudos = null;
-    
-        for(let i=0; i < this.conteudos.length; i++){
-    
-          if(this.conteudos[i].id == idConteudo){
-    
-          conteudos = this.conteudos[i];
-            
-          break; //parar a interação do FOR
-          }
-        }
-        return conteudos;
-      }*/
 
 }

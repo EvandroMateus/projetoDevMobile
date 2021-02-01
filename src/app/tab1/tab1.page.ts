@@ -21,6 +21,13 @@ export class Tab1Page{
   }
 
   async ionViewWillEnter(){
+    this.contentService.listaArtigos().then(artigos => {
+      this.artigos = artigos
+    })
+  }
+
+  async removerConteudo(id){
+    await this.contentService.removerConteudo(id)
     this.artigos = await this.contentService.listaArtigos()
   }
 

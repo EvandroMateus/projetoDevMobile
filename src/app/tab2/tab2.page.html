@@ -17,7 +17,7 @@
   </ion-fab>
   
   <ion-list>
-    <ion-item *ngFor="let noticia of noticias" [routerLink]="['/tabs/tab2/conteudo-info', noticia.id]">
+    <ion-item *ngFor="let noticia of noticias" [routerLink]="['conteudo-info', noticia.id]">
       <ion-label>
         <h1>{{noticia.titulo}}</h1>
         <h3>{{noticia.tema}}</h3><br>

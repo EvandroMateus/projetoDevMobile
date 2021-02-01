@@ -21,7 +21,15 @@ const routes: Routes = [
     component: ContentAddComponent
   },
   {
+    path: 'tabs/tab1/adicionar-editar/:id',
+    component: ContentAddComponent
+  },
+  {
     path: 'tabs/tab2/adicionar-editar',
+    component: ContentAddComponent
+  },
+  {
+    path: 'tabs/tab2/adicionar-editar/:id',
     component: ContentAddComponent
   }
 

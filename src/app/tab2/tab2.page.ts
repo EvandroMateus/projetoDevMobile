@@ -14,6 +14,13 @@ export class Tab2Page {
 
   
   async ionViewWillEnter(){
+    this.contentService.listaNoticias().then(noticias => {
+      this.noticias = noticias
+    })
+  }
+
+  async removerConteudo(id){
+    await this.contentService.removerConteudo(id)
     this.noticias = await this.contentService.listaNoticias()
   }
 

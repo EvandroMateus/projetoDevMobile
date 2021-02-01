@@ -12,6 +12,7 @@ export class Tab2Page {
 
   constructor(private contentService: ContentService) {}
 
+  
   async ionViewWillEnter(){
     this.noticias = await this.contentService.listaNoticias()
   }

@@ -3,25 +3,28 @@
     <ion-title>
       <ion-icon name="document-text-outline"></ion-icon>
       Últimos artigos
+      
     </ion-title>
+    <ion-icon slot="end" name="moon"></ion-icon>
+    <ion-toggle id="themeToggle" slot="end"></ion-toggle>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button [routerLink]="['adicionar-editar']">
       <ion-icon name="add" ></ion-icon>
     </ion-fab-button>
   </ion-fab>
-
   <ion-list>
+
     <ion-item *ngFor="let artigo of artigos" [routerLink]="['/tabs/tab1/conteudo-info', artigo.id]">
       <ion-label>
         <h1>{{artigo.titulo}}</h1>
-        <h3>{{artigo.tema}}</h3>
-        <p>{{artigo.autor}}</p>
+        <h3>{{artigo.tema}}</h3><br>
+        <p>publicado por {{artigo.autor}}</p>
       </ion-label>
     </ion-item>
   </ion-list>
 
+  
 </ion-content>
